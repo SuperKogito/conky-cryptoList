@@ -1,0 +1,65 @@
+# Conky settings #
+background no
+update_interval 1
+double_buffer yes
+no_buffers yes
+
+# Window specifications #
+own_window yes
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_class override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+minimum_size 300
+
+# Alignment #
+alignment tr
+gap_x 10
+gap_y 10
+
+border_inner_margin 15
+border_outer_margin 0
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+xftalpha 0
+xftfont Roboto-Light:size=12
+
+override_utf8_locale no
+
+imlib_cache_size 0
+
+# Color scheme #
+default_color 666666
+
+color1 006E09
+color2 9933CC
+color3 669900
+color4 FF4800
+color5 CC0000
+color6 AAAAAA
+color7 DDDDDD
+
+
+
+TEXT
+
+ID ${goto 50}NAME  ${goto 150}PRICE ${goto 250}CHANGE (24H)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+1. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[0] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[0] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[0] | "       \(.percent_change_24h) %"'}
+2. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[1] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[1] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[1] | "       \(.percent_change_24h) %"'}
+3. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[2] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[2] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[2] | "       \(.percent_change_24h) %"'}
+4. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[3] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[3] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[3] | "       \(.percent_change_24h) %"'}
+5. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[4] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[4] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[4] | "       \(.percent_change_24h) %"'}
+6. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[5] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[5] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[5] | "       \(.percent_change_24h) %"'}
+7. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[6] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[6] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[6] | "       \(.percent_change_24h) %"'}
+8. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[7] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[7] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[7] | "       \(.percent_change_24h) %"'}
+9. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[8] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[8] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[8] | "       \(.percent_change_24h) %"'}
+10. ${goto 50}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[9] | "\(.name)"'}  ${goto 150}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[9] | "\(.price_usd) $"'}${goto 250}${execi 300 curl -s https://api.coinmarketcap.com/v1/ticker/?limit=10 | jq -r '.[9] | "       \(.percent_change_24h) %"'}
